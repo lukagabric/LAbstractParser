@@ -3,7 +3,7 @@ LAbstractParser
 
 iOS Abstract Parser
 
-You may use the LAbstractParser class in your project, or you may follow the steps below to clone the repo and use it as static library in your project.
+You may use the LAbstractParser class files in your project, or you may follow the steps below to clone the repo and use it as static library in your project. Check SampleParser for implementation example.
 
 Integrating into your project as static library
 -----------------------------------------------
