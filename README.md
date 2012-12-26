@@ -18,29 +18,23 @@ Implementation example
 
 1. subclass LAbstractParser
 2. implement didStartElement and didEndElement methods
-- parsed values (including CDATA blocks) are stored in _elementValue member
-- you may bind data as in SampleParser:
 
-   - (void)didStartElement
-   {
-       ifElement(@"item")
-       {
+
+    - (void)didStartElement
+    {
+        ifElement(@"item")
+        {
            _item = [SampleItem new];
            _item.identifier = [_attributesDict objectForKey:@"id"];
            _item.name = [_attributesDict objectForKey:@"name"];
-       }
-   }
+        }
+    }
 
 
-   - (void)didEndElement
-   {
-       ifElement(@"item") [_items addObject:_item];
-       elifElement(@"value") bind(_item.value);
-       elifElement(@"cdataValue") bind(_item.cDataValue);
-       elifElement(@"intValue") bindInt(_item.intValue);
-       elifElement(@"floatValue") bindFloat(_item.floatValue);
-       elifElement(@"number") bindNo(_item.number);
-   }
+- parsed values (including CDATA blocks) are stored in _elementValue member
+- you may bind data as in SampleParser:
+
+ 
 
 3. use itemsArray property to get the items
 
