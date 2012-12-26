@@ -16,16 +16,46 @@ Integrating into your project as static library
 
 Implementation example
 ----------------------
-
 1. subclass LAbstractParser
 2. implement didStartElement and didEndElement methods
 3. parsing
-
-    SampleParser *parser = [SampleParser new];
-    [parser parseData:[NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"xml"]]];
-    
 4. get items using the itemsArray property
 
 Note:
 * parsed values (including CDATA blocks) are stored in _elementValue member, check also _attributesDict and _elementName members
 * you may bind data as in SampleParser (check the definitions in LAbstractParser.h):
+
+didStartElement and didEndElement methods
+-------------------------------------------------
+
+Subclass may implement the two methods as in the example below:
+
+    - (void)didStartElement
+    {
+        ifElement(@"item")
+        {
+            _item = [SampleItem new];
+            _item.identifier = [_attributesDict objectForKey:@"id"];
+            _item.name = [_attributesDict objectForKey:@"name"];
+        }
+    }
+
+    - (void)didEndElement
+    {
+        ifElement(@"item") [_items addObject:_item];
+        elifElement(@"value") bind(_item.value);
+        elifElement(@"cdataValue") bind(_item.cDataValue);
+        elifElement(@"intValue") bindInt(_item.intValue);
+        elifElement(@"floatValue") bindFloat(_item.floatValue);
+        elifElement(@"number") bindNo(_item.number);
+    }
+
+Parsing
+-------
+
+    SampleParser *parser = [SampleParser new];
+    [parser parseData:[NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"xml"]]];
+ 
+
+
+
