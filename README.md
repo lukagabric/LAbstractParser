@@ -14,11 +14,11 @@ Integrating into your project as static library
 4. add the relative path to the LAbstractParser header in your "User Header Search Path" Build Setting
 5. add -ObjC and -all_load to Other Linker Flags in your target's build settings
 
-Implementation example
-----------------------
+Implementation
+--------------
 1. subclass LAbstractParser
-2. implement didStartElement and didEndElement methods
-3. parsing
+2. implement didStartElement and didEndElement methods as explained below
+3. parse data (example below)
 4. get items using the itemsArray property
 
 Note:
@@ -55,7 +55,3 @@ Parsing
 
     SampleParser *parser = [SampleParser new];
     [parser parseData:[NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"xml"]]];
- 
-
-
-
