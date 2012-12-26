@@ -18,7 +18,8 @@ Implementation example
 
 1. subclass LAbstractParser
 2. implement didStartElement and didEndElement methods
-
+- parsed values (including CDATA blocks) are stored in _elementValue member, check also _attributesDict and _elementName members
+- you may bind data as in SampleParser (check the definitions in LAbstractParser.h):
 
     - (void)didStartElement
     {
@@ -29,18 +30,20 @@ Implementation example
            _item.name = [_attributesDict objectForKey:@"name"];
         }
     }
+    
+    - (void)didEndElement
+    {
+        ifElement(@"item") [_items addObject:_item];
+        elifElement(@"value") bind(_item.value);
+        elifElement(@"cdataValue") bind(_item.cDataValue);
+        elifElement(@"intValue") bindInt(_item.intValue);
+        elifElement(@"floatValue") bindFloat(_item.floatValue);
+        elifElement(@"number") bindNo(_item.number);
+    }
 
-
-- parsed values (including CDATA blocks) are stored in _elementValue member
-- you may bind data as in SampleParser:
-
- 
-
-3. use itemsArray property to get the items
-
-SampleViewController implementation:
+3. parsing
 
     SampleParser *parser = [SampleParser new];
     [parser parseData:[NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"xml"]]];
 
-- get items using the itemsArray property.
+4. get items using the itemsArray property
