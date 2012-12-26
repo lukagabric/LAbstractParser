@@ -23,7 +23,7 @@ Implementation example
 
     SampleParser *parser = [SampleParser new];
     [parser parseData:[NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"xml"]]];
-
+    
 4. get items using the itemsArray property
 
 Note:
