@@ -16,8 +16,10 @@ Integrating into your project as static library
 Implementation example
 ----------------------
 
-- subclass LAbstractParser
-- implement didStartElement and didEndElement methods
+1. subclass LAbstractParser
+2. implement didStartElement and didEndElement methods
+* parsed values (including CDATA blocks) are stored in _elementValue member, check also _attributesDict and _elementName members
+* you may bind data as in SampleParser (check the definitions in LAbstractParser.h):
 
     - (void)didStartElement
     {
@@ -39,12 +41,9 @@ Implementation example
         elifElement(@"number") bindNo(_item.number);
     }
 
-- parsed values (including CDATA blocks) are stored in _elementValue member, check also _attributesDict and _elementName members
-- you may bind data as in SampleParser (check the definitions in LAbstractParser.h):
-
-- parsing
+3. parsing
 
     SampleParser *parser = [SampleParser new];
     [parser parseData:[NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"xml"]]];
 
-- get items using the itemsArray property
+4. get items using the itemsArray property
