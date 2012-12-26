@@ -8,8 +8,8 @@ You may use the LAbstractParser class files in your project, or you may follow t
 Integrating into your project as static library
 -----------------------------------------------
 
-1. clone the LAbstractParser git repository
-2. drag LAbstractParser.xcodeproj to your project, make sure "Copy items" is unchecked
+1. clone the LAbstractParser git repository e.g. git clone git://github.com/lukagabric/LAbstractParser.git
+2. add LAbstractParser.xcodeproj to your project, make sure "Copy items" is unchecked
 3. in your target's Build Phases, under Link Binary With Libraries, click on the (+) and add the libLAbstractParser.a library
 4. add the relative path to the LAbstractParser header in your "User Header Search Path" Build Setting
 5. add -ObjC and -all_load to Other Linker Flags in your target's build settings
