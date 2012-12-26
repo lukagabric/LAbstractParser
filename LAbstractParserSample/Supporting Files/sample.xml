@@ -1,0 +1,16 @@
+<items>
+	<item id="1" name="Item 1">
+        <value>value 1</value>
+        <cdataValue><![CDATA[Cdata value 1]]></cdataValue>
+        <intValue>123</intValue>
+        <floatValue>1.35</floatValue>
+        <number>1.1</number>
+    </item>
+	<item id="2" name="Item 2">
+        <value>value 2</value>
+        <cdataValue><![CDATA[Cdata value 2]]></cdataValue>
+        <intValue>321</intValue>
+        <floatValue>134.325</floatValue>
+        <number>3211.1123</number>
+    </item>
+</items>
