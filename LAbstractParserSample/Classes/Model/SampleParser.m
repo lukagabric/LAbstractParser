@@ -22,8 +22,8 @@
 - (void)didEndElement
 {
     ifElement(@"item") [_items addObject:_item];
-    elifElement(@"value") bind(_item.value);
-    elifElement(@"cdataValue") bind(_item.cDataValue);
+    elifElement(@"value") bindStr(_item.value);
+    elifElement(@"cdataValue") bindStr(_item.cDataValue);
     elifElement(@"intValue") bindInt(_item.intValue);
     elifElement(@"floatValue") bindFloat(_item.floatValue);
     elifElement(@"number") bindNo(_item.number);

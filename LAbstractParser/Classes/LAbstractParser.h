@@ -1,6 +1,6 @@
 #define ifElement(str) if ([_elementName isEqualToString:str])
 #define elifElement(str) else if ([_elementName isEqualToString:str])
-#define bind(obj) obj = _elementValue
+#define bindStr(obj) obj = _elementValue
 #define bindNo(obj) obj = [NSNumber numberWithDouble:[_elementValue doubleValue]]
 #define bindInt(obj) obj = [_elementValue intValue]
 #define bindFloat(obj) obj = [_elementValue floatValue]
