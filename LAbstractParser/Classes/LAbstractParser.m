@@ -15,19 +15,25 @@
     NSXMLParser *parser = nil;
 	
     if (data != nil)
+    {
 		parser = [[NSXMLParser alloc] initWithData:data];
+
+        _items = [NSMutableArray new];
+        
+        [parser setDelegate:self];
+        
+        [parser setShouldProcessNamespaces:NO];
+        [parser setShouldReportNamespacePrefixes:NO];
+        [parser setShouldResolveExternalEntities:NO];
+        
+        [parser parse];
+
+    }
     else
+    {
+        _error = [NSError errorWithDomain:@"No data" code:0 userInfo:nil];
 		return;
-	
-	_items = [NSMutableArray new];
-	
-    [parser setDelegate:self];
-	
-    [parser setShouldProcessNamespaces:NO];
-    [parser setShouldReportNamespacePrefixes:NO];
-    [parser setShouldResolveExternalEntities:NO];
-	
-    [parser parse];
+    }
 }
 
 

@@ -37,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41CE1862174B740D00370666 /* LParserInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LParserInterface.h; sourceTree = "<group>"; };
 		A153A1EE1688F4CB0036A220 /* libLAbstractParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLAbstractParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A153A1F11688F4CB0036A220 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A153A2001688F4FF0036A220 /* LAbstractParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAbstractParser.h; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 		A153A1FF1688F4FF0036A220 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				41CE1862174B740D00370666 /* LParserInterface.h */,
 				A153A2001688F4FF0036A220 /* LAbstractParser.h */,
 				A153A2011688F4FF0036A220 /* LAbstractParser.m */,
 			);
