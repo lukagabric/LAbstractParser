@@ -14,7 +14,7 @@
 {
     NSXMLParser *parser = nil;
 	
-    if (data != nil)
+    if (data)
     {
 		parser = [[NSXMLParser alloc] initWithData:data];
 
@@ -32,7 +32,6 @@
     else
     {
         _error = [NSError errorWithDomain:@"No data" code:0 userInfo:nil];
-		return;
     }
 }
 
