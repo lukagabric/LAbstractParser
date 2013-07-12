@@ -4,6 +4,7 @@
 - (void)parseData:(NSData *)data;
 - (NSError *)error;
 - (NSArray *)itemsArray;
+- (void)abortParsing;
 
 
 @end
