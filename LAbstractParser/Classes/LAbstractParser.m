@@ -148,6 +148,12 @@
 }
 
 
+- (NSError *)error
+{
+    return _error;
+}
+
+
 #pragma mark - abort
 
 

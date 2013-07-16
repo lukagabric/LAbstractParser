@@ -21,11 +21,8 @@
 	NSXMLParser *_parser;
     NSDateFormatter *_dateTimeFormatter;
     NSDateFormatter *_dateFormatter;
+    NSError *_error;
 }
-
-
-@property (readonly, nonatomic) NSError *error;
-@property (readonly, nonatomic) NSArray *itemsArray;
 
 
 @end
