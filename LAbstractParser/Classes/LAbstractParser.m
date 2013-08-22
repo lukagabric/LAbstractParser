@@ -15,6 +15,12 @@
     self = [super init];
     if (self)
     {
+        _dateTimeFormatter = [[NSDateFormatter alloc] init];
+        _dateTimeFormatter.dateFormat = [self dateTimeFormat];
+        
+        _dateFormatter = [[NSDateFormatter alloc] init];
+        _dateFormatter.dateFormat = [self dateFormat];
+
         [self initialize];
     }
     return self;
@@ -23,11 +29,7 @@
 
 - (void)initialize
 {
-    _dateTimeFormatter = [[NSDateFormatter alloc] init];
-    _dateTimeFormatter.dateFormat = [self dateTimeFormat];
     
-    _dateFormatter = [[NSDateFormatter alloc] init];
-    _dateFormatter.dateFormat = [self dateFormat];
 }
 
 
@@ -145,12 +147,6 @@
 - (NSArray *)itemsArray
 {
 	return [NSArray arrayWithArray:_items];
-}
-
-
-- (NSError *)error
-{
-    return _error;
 }
 
 

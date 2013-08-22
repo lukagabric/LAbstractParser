@@ -8,8 +8,10 @@
 #define bindDate(obj)     obj = [_dateFormatter dateFromString:_elementValue]
 #define bindDateTime(obj) obj = [_dateTimeFormatter dateFromString:_elementValue]
 #define bindNoInt(obj)    obj = [NSNumber numberWithInteger:[_elementValue integerValue]]
+#define bindNoBool(obj)   obj = [NSNumber numberWithBool:[_elementValue boolValue]]
 #define bindInt(obj)      obj = [_elementValue intValue]
 #define bindFloat(obj)    obj = [_elementValue floatValue]
+#define bindDouble(obj)   obj = [_elementValue doubleValue]
 
 
 @interface LAbstractParser : NSObject <NSXMLParserDelegate, LParserInterface>
@@ -21,8 +23,11 @@
 	NSXMLParser *_parser;
     NSDateFormatter *_dateTimeFormatter;
     NSDateFormatter *_dateFormatter;
-    NSError *_error;
 }
+
+
+@property (readonly, nonatomic) NSError *error;
+@property (readonly, nonatomic) NSArray *itemsArray;
 
 
 @end
