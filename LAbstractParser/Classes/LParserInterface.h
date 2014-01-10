@@ -2,8 +2,9 @@
 
 
 - (void)parseData:(NSData *)data;
-- (NSError *)error;
-- (NSArray *)itemsArray;
+- (void)setUserInfo:(id)userInfo;
+- (NSError *)getError;
+- (NSArray *)getItemsArray;
 - (void)abortParsing;
 
 

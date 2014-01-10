@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>31E5A7D9-68EE-4DAF-8DC7-F878B43465C7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LAbstractParser</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BC6D680B-9E5F-49D6-B457-8F3F918D24C2</key>
+		<string>https://github.com/lukagabric/LAbstractParser.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LAbstractParser.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BC6D680B-9E5F-49D6-B457-8F3F918D24C2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/lukagabric/LAbstractParser.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BC6D680B-9E5F-49D6-B457-8F3F918D24C2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BC6D680B-9E5F-49D6-B457-8F3F918D24C2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LAbstractParser</string>
+		</dict>
+	</array>
+</dict>
+</plist>

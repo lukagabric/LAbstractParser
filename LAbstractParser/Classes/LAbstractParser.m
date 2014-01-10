@@ -15,12 +15,6 @@
     self = [super init];
     if (self)
     {
-        _dateTimeFormatter = [[NSDateFormatter alloc] init];
-        _dateTimeFormatter.dateFormat = [self dateTimeFormat];
-        
-        _dateFormatter = [[NSDateFormatter alloc] init];
-        _dateFormatter.dateFormat = [self dateFormat];
-
         [self initialize];
     }
     return self;
@@ -29,6 +23,11 @@
 
 - (void)initialize
 {
+    _dateTimeFormatter = [[NSDateFormatter alloc] init];
+    _dateTimeFormatter.dateFormat = [self getDateTimeFormat];
+    
+    _dateFormatter = [[NSDateFormatter alloc] init];
+    _dateFormatter.dateFormat = [self getDateFormat];
     
 }
 
@@ -38,23 +37,18 @@
 
 - (void)parseData:(NSData *)data
 {
-	if (data)
+	if (data && !_parser && !_error)
 	{
-		if (_parser)
-		{
-			[_parser abortParsing];
-		}
-
 		_parser = [[NSXMLParser alloc] initWithData:data];
-
+        
 		_items = [NSMutableArray new];
-
+        
 		[_parser setDelegate:self];
-
+        
 		[_parser setShouldProcessNamespaces:NO];
 		[_parser setShouldReportNamespacePrefixes:NO];
 		[_parser setShouldResolveExternalEntities:NO];
-
+        
 		[_parser parse];
 	}
 	else
@@ -129,24 +123,39 @@
 }
 
 
+#pragma mark - Setters
+
+
+- (void)setUserInfo:(id)userInfo
+{
+    _userInfo = userInfo;
+}
+
+
 #pragma mark - Getters
 
 
-- (NSString *)dateFormat
+- (NSString *)getDateFormat
 {
     return @"yyyy-MM-dd";
 }
 
 
-- (NSString *)dateTimeFormat
+- (NSString *)getDateTimeFormat
 {
     return @"yyyy-MM-dd hh:mm:ss Z";
 }
 
 
-- (NSArray *)itemsArray
+- (NSArray *)getItemsArray
 {
 	return [NSArray arrayWithArray:_items];
+}
+
+
+- (NSError *)getError
+{
+    return _error;
 }
 
 
@@ -155,7 +164,9 @@
 
 - (void)abortParsing
 {
+    [_parser setDelegate:nil];
 	[_parser abortParsing];
+    _parser = nil;
 	_error = [NSError errorWithDomain:@"Parsing aborted." code:299 userInfo:nil];
 }
 

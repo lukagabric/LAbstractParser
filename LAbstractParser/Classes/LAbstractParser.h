@@ -1,3 +1,9 @@
+//
+//  Created by Luka Gabrić.
+//  Copyright (c) 2013 Luka Gabrić. All rights reserved.
+//
+
+
 #import "LParserInterface.h"
 
 
@@ -16,18 +22,17 @@
 
 @interface LAbstractParser : NSObject <NSXMLParserDelegate, LParserInterface>
 {
-	NSDictionary *_attributesDict;
+    NSDictionary *_attributesDict;
 	NSString *_elementValue;
 	NSString *_elementName;
-	NSMutableArray *_items;
 	NSXMLParser *_parser;
+	NSMutableArray *_items;
+    NSError *_error;
     NSDateFormatter *_dateTimeFormatter;
     NSDateFormatter *_dateFormatter;
+    
+    id _userInfo;
 }
-
-
-@property (readonly, nonatomic) NSError *error;
-@property (readonly, nonatomic) NSArray *itemsArray;
 
 
 @end
@@ -44,8 +49,8 @@
 - (void)didStartElement;
 - (void)didEndElement;
 
-- (NSString *)dateTimeFormat;
-- (NSString *)dateFormat;
+- (NSString *)getDateTimeFormat;
+- (NSString *)getDateFormat;
 
 
 @end

@@ -13,7 +13,7 @@
     SampleParser *parser = [SampleParser new];
     [parser parseData:[NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"sample" withExtension:@"xml"]]];
     
-    for (SampleItem *item in [parser itemsArray])
+    for (SampleItem *item in [parser getItemsArray])
     {
         NSLog(@"%@", item);
     }
